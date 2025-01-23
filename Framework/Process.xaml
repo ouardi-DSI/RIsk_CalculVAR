@@ -55,6 +55,7 @@
       <x:String>UiPath.Excel.Activities</x:String>
       <x:String>System.Linq.Expressions</x:String>
       <x:String>System.Net</x:String>
+      <x:String>System.Numerics</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -119,16 +120,17 @@
       <AssemblyReference>System.Net.Requests</AssemblyReference>
       <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
       <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1196,15311" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1836,16819" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="586,15216" sap2010:WorkflowViewState.IdRef="Sequence_11">
+    <Sequence sap:VirtualizedContainerService.HintSize="586,16724" sap2010:WorkflowViewState.IdRef="Sequence_11">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -146,7 +148,7 @@
         <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="416,112" sap2010:WorkflowViewState.IdRef="CreateDirectory_4" Path="[in_chemin_VAR_Archive.TrimEnd(&quot;\&quot;c) + &quot;\&quot; + in_NouvelleDate_JJ_MM_YYYY.split(&quot;-&quot;c)(2)+&quot;\&quot; + in_NouveauMois_FR]" />
         <ui:CopyFile ContinueOnError="True" Destination="[in_chemin_VAR_Archive.TrimEnd(&quot;\&quot;c) + &quot;\&quot; + in_NouvelleDate_JJ_MM_YYYY.split(&quot;-&quot;c)(2)+&quot;\&quot; + in_NouveauMois_FR +&quot;\&quot; + in_NouvelleDate_JJ_MM_YYYY+&quot; -VAR&quot; +&quot;.xls&quot;]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="CopyFile_2" Path="[in_Chemin_Template_VAR]" />
       </Sequence>
-      <Sequence DisplayName="Traitement_KVAR" sap:VirtualizedContainerService.HintSize="552,14640" sap2010:WorkflowViewState.IdRef="Sequence_12">
+      <Sequence DisplayName="Traitement_KVAR" sap:VirtualizedContainerService.HintSize="552,16148" sap2010:WorkflowViewState.IdRef="Sequence_12">
         <Sequence.Variables>
           <Variable x:TypeArguments="ss:SecureString" Name="Password_KVAR" />
           <Variable x:TypeArguments="x:String" Name="Username_MarketClient" />
@@ -158,13 +160,13 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:ExcelApplicationScope Password="{x:Null}" SensitivityLabel="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="518,14557" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" SensitivityOperation="None" WorkbookPath="[in_chemin_VAR_Archive.TrimEnd(&quot;\&quot;c) + &quot;\&quot; + in_NouvelleDate_JJ_MM_YYYY.split(&quot;-&quot;c)(2)+&quot;\&quot; + in_NouveauMois_FR +&quot;\&quot; + in_NouvelleDate_JJ_MM_YYYY+&quot; -VAR&quot; +&quot;.xls&quot;]">
+        <ui:ExcelApplicationScope Password="{x:Null}" SensitivityLabel="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="518,16065" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" SensitivityOperation="None" WorkbookPath="[in_chemin_VAR_Archive.TrimEnd(&quot;\&quot;c) + &quot;\&quot; + in_NouvelleDate_JJ_MM_YYYY.split(&quot;-&quot;c)(2)+&quot;\&quot; + in_NouveauMois_FR +&quot;\&quot; + in_NouvelleDate_JJ_MM_YYYY+&quot; -VAR&quot; +&quot;.xls&quot;]">
           <ui:ExcelApplicationScope.Body>
             <ActivityAction x:TypeArguments="ui:WorkbookApplication">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484,14384" sap2010:WorkflowViewState.IdRef="Sequence_13">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484,15932" sap2010:WorkflowViewState.IdRef="Sequence_13">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="Chemin_image_EQ_Deal" />
                   <Variable x:TypeArguments="x:String" Name="Montant_EQ_Deal" />
@@ -184,6 +186,8 @@
                   <Variable x:TypeArguments="x:String" Name="Montant_Taux_MAD" />
                   <Variable x:TypeArguments="x:String" Name="Montant_OPCVM" />
                   <Variable x:TypeArguments="x:String" Name="Chemin_Image_OPCVM" />
+                  <Variable x:TypeArguments="x:String" Name="Chemin_Image_VAR_All" />
+                  <Variable x:TypeArguments="x:String" Name="Montant_VAR_ALL" />
                 </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -233,6 +237,56 @@
                   <ui:InvokeWorkflowFile.Arguments>
                     <InArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_StepWorkflow]</InArgument>
                     <InArgument x:TypeArguments="x:Int32" x:Key="in_Timeout">[in_Timeout]</InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Navigation_VAR_ALL - Invoke Workflow File (KVAR\VAR ALL\Navigation_VAR_ALL.xaml)" sap:VirtualizedContainerService.HintSize="450,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_172" UnSafe="False" WorkflowFileName="KVAR\VAR ALL\Navigation_VAR_ALL.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_Stepworkflow]</InOutArgument>
+                    <InArgument x:TypeArguments="x:Int32" x:Key="in_Timeout">[in_Timeout]</InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Verification_Navigation_VAR_ALL - Invoke Workflow File (KVAR\VAR ALL\Verification_Navigation_VAR_ALL.xaml)" sap:VirtualizedContainerService.HintSize="450,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_173" UnSafe="False" WorkflowFileName="KVAR\VAR ALL\Verification_Navigation_VAR_ALL.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_Stepworkflow]</InArgument>
+                    <InArgument x:TypeArguments="x:Int32" x:Key="in_Timeout">[in_Timeout]</InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Saisie_VAR_ALL - Invoke Workflow File (KVAR\VAR ALL\Saisie_VAR_ALL.xaml)" sap:VirtualizedContainerService.HintSize="450,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_174" UnSafe="False" WorkflowFileName="KVAR\VAR ALL\Saisie_VAR_ALL.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_Stepworkflow]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_NouvelleDate_YYYY_MM_JJ">[in_NouvelleDate_YYYY_MM_JJ]</InArgument>
+                    <InArgument x:TypeArguments="x:Int32" x:Key="in_Timeout">[in_Timeout]</InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Verification_Saisie_VAR_ALL - Invoke Workflow File (KVAR\VAR ALL\Verification_Saisie_VAR_ALL.xaml)" sap:VirtualizedContainerService.HintSize="450,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_175" UnSafe="False" WorkflowFileName="KVAR\VAR ALL\Verification_Saisie_VAR_ALL.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_Stepworkflow]</InOutArgument>
+                    <InArgument x:TypeArguments="x:Int32" x:Key="in_Timeout">[in_Timeout]</InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Recuperation_Total_VAR_ALL - Invoke Workflow File (KVAR\VAR ALL\Recuperation_Total_VAR_ALL.xaml)" sap:VirtualizedContainerService.HintSize="450,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_176" UnSafe="False" WorkflowFileName="KVAR\VAR ALL\Recuperation_Total_VAR_ALL.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_Stepworkflow]</InOutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_chemin_Archive">[in_Chemin_Archive]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Date_JJMMYYYY">[in_NouvelleDate_JJMMYY]</InArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="out_Chemin_Image_EQ_Deal">[Chemin_Image_VAR_All]</OutArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="out_Montant_Eq_Deal">[Montant_VAR_ALL]</OutArgument>
+                    <InArgument x:TypeArguments="x:Int32" x:Key="in_Timeout">[in_Timeout]</InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Ecriture_Image - Invoke Workflow File (KVAR\Ecriture_Image.xaml)" sap:VirtualizedContainerService.HintSize="450,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_177" UnSafe="False" WorkflowFileName="KVAR\Ecriture_Image.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_Stepworkflow]</InOutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Chemin_Excel">[in_chemin_VAR_Archive.TrimEnd("\"c) + "\" + in_NouvelleDate_JJ_MM_YYYY.split("-"c)(2)+"\" + in_NouveauMois_FR +"\" + in_NouvelleDate_JJ_MM_YYYY+" -VAR" +".xls"]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Feuille">Var (1J-1STEP)</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Cell_Image">B442</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Chemin_Image">[Chemin_Image_VAR_All]</InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+                <ui:ExcelWriteCell Cell="D22" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="450,120" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_23" SheetName="Feuil1" Text="[Montant_EQ_Deal]" />
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Fermeture_VAR_ALL - Invoke Workflow File (KVAR\VAR ALL\Fermeture_VAR_ALL.xaml)" sap:VirtualizedContainerService.HintSize="450,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_178" UnSafe="False" WorkflowFileName="KVAR\VAR ALL\Fermeture_VAR_ALL.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_Stepworkflow]</InOutArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Navigation_EQ_Deal - Invoke Workflow File (KVAR\Equity\Navigation_EQ_Deal.xaml)" sap:VirtualizedContainerService.HintSize="450,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_94" UnSafe="False" WorkflowFileName="KVAR\Equity\Navigation_EQ_Deal.xaml">
