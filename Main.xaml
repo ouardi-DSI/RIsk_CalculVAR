@@ -427,7 +427,7 @@
                               <InArgument x:TypeArguments="x:String" x:Key="NouveauMois_FR">[TransactionItem.SpecificContent("NouveauMois_FR").ToString]</InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="NouvelleDate_YYYY_MM_JJ">[TransactionItem.SpecificContent("NouvelleDate_YYYY_MM_JJ").ToString]</InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="NouvelleDAte_JJMMYY">[TransactionItem.SpecificContent("NouvelleDAte_JJMMYY").ToString]</InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="Traitement">[Exception.Message.split(":"c)(1).ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="Traitement">[Exception.Message.split(":"c)(1).ToString.Trim]</InArgument>
                             </ui:AddQueueItem.ItemInformation>
                           </ui:AddQueueItem>
                           <TryCatch DisplayName="Try Catch SetTransactionStatus (SE)" sap:VirtualizedContainerService.HintSize="434,48" sap2010:WorkflowViewState.IdRef="TryCatch_12">
