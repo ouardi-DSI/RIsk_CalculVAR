@@ -116,7 +116,7 @@
       </ui:InvokeWorkflowFile>
       <ui:UiElementExists DisplayName="Element Exists 'xmanager.exe Risk'" Exists="[Eq_Existe]" sap:VirtualizedContainerService.HintSize="418,139" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
         <ui:UiElementExists.Target>
-          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3a8c6a5d-d91f-4cd2-9001-c22ec29c6676" InformativeScreenshot="2c6702efd9038604b0e0005ee8b044bf" Selector="&lt;wnd app='xmanager.exe' cls='Xmanager:XFrame' title='*Risk Assumption: ALL-Provisoire*' /&gt;" TimeoutMS="[in_Timeout*2]">
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3a8c6a5d-d91f-4cd2-9001-c22ec29c6676" InformativeScreenshot="2c6702efd9038604b0e0005ee8b044bf" Selector="&lt;wnd app='xmanager.exe' cls='Xmanager:XFrame' title='*Risk Assumption: ALL-Provisoire*' /&gt;" TimeoutMS="[in_Timeout*6]">
             <ui:Target.WaitForReady>
               <InArgument x:TypeArguments="ui:WaitForReady" />
             </ui:Target.WaitForReady>
