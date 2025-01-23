@@ -91,13 +91,13 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Navigation_EQ_Deal" sap:VirtualizedContainerService.HintSize="1196,1934" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Navigation_EQ_Deal" sap:VirtualizedContainerService.HintSize="1836,2041" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Navigation_Trading_Compte_Propre" sap:VirtualizedContainerService.HintSize="484,1911" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Navigation_Trading_Compte_Propre" sap:VirtualizedContainerService.HintSize="484,2018" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="Edit_Existe" />
       </Sequence.Variables>
@@ -162,7 +162,7 @@
           </ui:Target>
         </ui:ClickImage.Target>
       </ui:ClickImage>
-      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="450,419" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="450,526" sap2010:WorkflowViewState.IdRef="TryCatch_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -236,6 +236,9 @@
             </ActivityAction>
           </Catch>
         </TryCatch.Catches>
+        <TryCatch.Finally>
+          <Sequence DisplayName="Finally" sap2010:WorkflowViewState.IdRef="Sequence_7" />
+        </TryCatch.Finally>
       </TryCatch>
       <ui:ImageFound DisplayName="Image Exists 'xmanager.exe  Market'" Found="[Edit_Existe]" sap:VirtualizedContainerService.HintSize="450,139" sap2010:WorkflowViewState.IdRef="ImageFound_2">
         <ui:ImageFound.Image>
